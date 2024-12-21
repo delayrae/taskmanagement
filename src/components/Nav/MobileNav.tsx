@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../Logo";
-import { sidebarLinks } from "@/constants";
+import { appName, sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { DialogDescription, DialogTitle } from "../ui/dialog";
@@ -43,12 +43,12 @@ export default function MobileNav() {
             className="cursor-pointer flex items-center gap-1 px-4"
           >
             <Image src="/Icons/logo.svg" alt="Logo" width={30} height={30} />
-            <h1 className="text-26 font-semibold">Taskbahr</h1>
+            <h1 className="text-xl font-bold">{appName}</h1>
           </Link>
 
           <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto">
             <SheetClose asChild>
-              <nav className="flex h-full flex-col gap-6 pt-16 text-background">
+              <nav className="flex h-full flex-col gap-6 pt-7 text-background">
                 {sidebarLinks.map((item) => {
                   const isActive =
                     pathname === item.route ||
@@ -60,7 +60,7 @@ export default function MobileNav() {
                         href={item.route}
                         key={item.label}
                         className={cn(
-                          "flex gap-3 items-center p-4 rounded-lg w-full max-w-60",
+                          "flex gap-3 items-center p-4 rounded-lg w-full max-w-full",
                           {
                             "bg-primary": isActive,
                           }
@@ -91,7 +91,8 @@ export default function MobileNav() {
                 })}
               </nav>
             </SheetClose>
-            FOOTER
+
+            <footer className="flex justify-end">FOOTER</footer>
           </div>
         </SheetContent>
       </Sheet>

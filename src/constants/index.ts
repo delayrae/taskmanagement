@@ -1,4 +1,6 @@
-export const user = true;
+export const user: boolean = true;
+
+export const appName: string = "tasker";
 
 export const sidebarLinks = [
   {

@@ -105,7 +105,7 @@ export const columns: ColumnDef<TableData>[] = [
                   <Label className="text-foreground text-lg font-semibold">
                     Description
                   </Label>
-                  <Label className="text-md cursor-text text-justify">
+                  <Label className="text-sm text-foreground cursor-text text-justify">
                     {task.desc}
                   </Label>
                 </div>

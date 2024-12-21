@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Logo from "../Logo";
 
 // =========== FORM LOGIC IMPORTS =========== //
 import { z } from "zod";
@@ -18,13 +17,15 @@ import Link from "next/link";
 import { Account } from "appwrite";
 import { account, client } from "@/lib/appwrite";
 
+import Image from "next/image";
+
 // =========== FORM SCHEMA =========== //
 export default function Login({ type }: { type: string }) {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // =========== FOR MDEFINITION =========== //
+  // =========== FORM DEFINITION =========== //
   const form = useForm<z.infer<typeof authFormSchema>>({
     resolver: zodResolver(authFormSchema),
     defaultValues: {
@@ -57,8 +58,14 @@ export default function Login({ type }: { type: string }) {
 
   return (
     <section className="flex min-h-screen w-full max-w-[420px] flex-col justify-center gap-5 py-10 md:gap-8">
-      <header className="flex items-center gap-5 md:gap-8 -mb-2">
-        <Logo />
+      <header className="flex items-center gap-5 md:gap-8">
+        <Image
+          src="/Icons/logo.svg"
+          alt="Logo"
+          width={60}
+          height={60}
+          draggable={false}
+        />
 
         <div className="flex flex-col gap-1 md:gap-3">
           <h1 className="text-24 lg:text-36 font-semibold text-foreground">
@@ -100,8 +107,7 @@ export default function Login({ type }: { type: string }) {
               </Button>
             </form>
           </Form>
-
-          <footer className="flex justify-center gap-1 max-sm:flex-col max-sm:items-center -mt-6">
+          <footer className="flex justify-center gap-1 max-sm:flex-col max-sm:items-center">
             <p className="text-14 font-normal text-muted-foreground">
               Don't know your credentials?
             </p>

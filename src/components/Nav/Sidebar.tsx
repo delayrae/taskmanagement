@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../Logo";
-import { sidebarLinks } from "@/constants";
+import { appName, sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
@@ -16,7 +16,7 @@ export default function Sidebar() {
         <Link href="/" className="flex items-center gap-5">
           <Logo />
           <h1 className="2xl:text-26 text-[26px] font-bold text-foreground max-xl:hidden">
-            Taskbahr
+            {appName}
           </h1>
         </Link>
 
