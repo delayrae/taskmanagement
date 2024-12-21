@@ -21,7 +21,7 @@ const FormInput = ({
       name={name}
       render={({ field }) => (
         <FormItem className="flex flex-col gap-1.5">
-          <FormLabel className="text-14 w-full max-w-[280px] font-medium text-gray-700">
+          <FormLabel className="text-14 w-full max-w-[280px] font-medium text-gray-700 -mb-2">
             {label}
           </FormLabel>
           <div className="flex w-full flex-col">

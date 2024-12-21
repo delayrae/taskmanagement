@@ -1,36 +1,33 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { user } from "@/constants";
+import { redirect } from "next/navigation";
 
 import Sidebar from "@/components/Nav/Sidebar";
 import Image from "next/image";
 import MobileNav from "@/components/Nav/MobileNav";
+import { getLoggedInUser } from "@/lib/appwrite";
+import { user } from "@/constants";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
+  //const user = await getLoggedInUser();
 
-  if (user) {
-    return (
-      <main className="flex h-screen w-full font-inter">
-        <Sidebar />
+  if (!user) redirect("/login");
 
-        <div className="flex size-full flex-col">
-          <div className="flex h-16 items-center justify-between p-5 shadow-md sm:p-8 md:hidden">
-            <Image src="/Icons/logo.svg" alt="Logo" width={30} height={30} />
-            <div>
-              <MobileNav />
-            </div>
+  return (
+    <main className="flex h-screen w-full font-inter">
+      <Sidebar />
+
+      <div className="flex size-full flex-col">
+        <div className="flex h-16 items-center justify-between p-5 shadow-md sm:p-8 md:hidden">
+          <Image src="/Icons/logo.svg" alt="Logo" width={30} height={30} />
+          <div>
+            <MobileNav />
           </div>
-          {children}
         </div>
-      </main>
-    );
-  } else {
-    router.push("/login");
-  }
+        {children}
+      </div>
+    </main>
+  );
 }

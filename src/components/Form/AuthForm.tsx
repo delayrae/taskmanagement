@@ -57,7 +57,7 @@ export default function Login({ type }: { type: string }) {
 
   return (
     <section className="flex min-h-screen w-full max-w-[420px] flex-col justify-center gap-5 py-10 md:gap-8">
-      <header className="flex items-center gap-5 md:gap-8">
+      <header className="flex items-center gap-5 md:gap-8 -mb-2">
         <Logo />
 
         <div className="flex flex-col gap-1 md:gap-3">
@@ -101,7 +101,7 @@ export default function Login({ type }: { type: string }) {
             </form>
           </Form>
 
-          <footer className="flex justify-center gap-1 max-sm:flex-col max-sm:items-center">
+          <footer className="flex justify-center gap-1 max-sm:flex-col max-sm:items-center -mt-6">
             <p className="text-14 font-normal text-muted-foreground">
               Don't know your credentials?
             </p>
@@ -109,7 +109,7 @@ export default function Login({ type }: { type: string }) {
               href={"/"}
               className="text-14 cursor-pointer font-medium text-primary"
             >
-              Contact your admin
+              Contact the admin
             </Link>
           </footer>
         </>
