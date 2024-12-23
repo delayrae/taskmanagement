@@ -1,4 +1,3 @@
-import { realtimeListener } from "@/actions/appwrite/realtimeListener";
 import { fetchData } from "@/actions/appwrite/taskActions";
 import { columns } from "@/components/Table/columns";
 import { DataTable } from "@/components/Table/data-table";

@@ -4,10 +4,13 @@ import { Query } from "appwrite";
 
 // =========== GET DOCUMENTS =========== //
 export async function fetchData() {
+  // TODO: FIX QUERY LIMIT BY NOT USING MATH.RANDOM()
+  const queryLimit = Math.floor(Math.random() * (5000 - 50 + 1)) + 50;
+
   const response = await databases.listDocuments(
     `${process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID}`,
     `${process.env.NEXT_PUBLIC_APPWRITE_TASK_COLLECTION_ID}`,
-    [Query.limit(500)]
+    [Query.limit(queryLimit), Query.offset(0)]
   );
 
   console.log(response);

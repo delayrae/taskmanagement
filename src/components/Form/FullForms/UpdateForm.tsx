@@ -33,6 +33,7 @@ import { columns } from "@/components/Table/columns";
 import { UpdateFormprops } from "@/types";
 import { databases, ID } from "@/lib/appwrite";
 import { patchData } from "@/actions/appwrite/taskActions";
+import { DialogTrigger } from "@/components/ui/dialog";
 
 export default function UpdateForm({ status, priority, $id }: UpdateFormprops) {
   const router = useRouter();
@@ -123,19 +124,21 @@ export default function UpdateForm({ status, priority, $id }: UpdateFormprops) {
             />
           </div>
 
-          <Button
-            type="submit"
-            className="w-full text-16 rounded-lg border border-primary bg-primary font-semibold text-background shadow-form"
-          >
-            <Image
-              src="/Icons/save-fill.svg"
-              alt="Save Icon"
-              width={18}
-              height={18}
-              className="brightness-[3] invert"
-            />
-            Save
-          </Button>
+          <DialogTrigger asChild>
+            <Button
+              type="submit"
+              className="w-full text-16 rounded-lg border border-primary bg-primary font-semibold text-background shadow-form"
+            >
+              <Image
+                src="/Icons/save-fill.svg"
+                alt="Save Icon"
+                width={18}
+                height={18}
+                className="brightness-[3] invert"
+              />
+              Save
+            </Button>
+          </DialogTrigger>
         </form>
       </Form>
     </>

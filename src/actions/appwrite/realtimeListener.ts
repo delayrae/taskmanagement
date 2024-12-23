@@ -4,6 +4,7 @@ import { client } from "@/lib/appwrite";
 import { useEffect } from "react";
 import { fetchData } from "./taskActions";
 
+// TODO: UPDATE setDocuments TYPE
 export function realtimeListener(setDocuments: any) {
   useEffect(() => {
     const channel = `databases.${process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID}
