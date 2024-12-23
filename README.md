@@ -1,4 +1,4 @@
-<h1 align="center">❌ NOT USABLE ❌</h1>
+<h1 align="center">❌ NOT USEABLE ❌</h1>
 
 <div>
   <h1>📜 About</h1>
