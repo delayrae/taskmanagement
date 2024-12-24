@@ -46,5 +46,5 @@
 </div>
 
 <div align="center">
-  <h6>Made with ❤️ by <a href="https://github.com/delayrae/delayrae">delayrae</a></h6>
+  <h6>Made with ❤️ by <a href="https://github.com/delayrae">delayrae</a></h6>
 </div>
